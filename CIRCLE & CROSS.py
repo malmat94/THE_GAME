@@ -1,21 +1,6 @@
-language_choice = False
-while language_choice != True:
+import GAME_LANGUAGE_CHOICE #import pliku z wyborem języka
 
-    language = input("Wybierz jezyk/ Choose Your language(PL/ENG): ")
-    print(" ")
-
-    if language == "PL":
-        language_respond = "Witamy w grze KOLKO VS KRZYZYK!!"
-        language_choice = True
-        print(language_respond)
-    elif language == "ENG":
-        language_respond = "Welcome to the CROSS VS CIRCLE game!!"
-        language_choice = True
-        print(language_respond)
-    else:
-        language_respond = "Niewlasciwy wybor, sporbuj ponownie/ Invalid choice, try again!"
-        language_choice = False
-        print(language_respond)
+language = GAME_LANGUAGE_CHOICE.choose_language("KOLKO VS KRZYZYK", "CROSS VS CIRCLE") #wybór języka, zwrot zmiennej language
 
 A1 = " "
 A2 = " "
