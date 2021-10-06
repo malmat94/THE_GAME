@@ -135,6 +135,6 @@ def hangman_penalty(penalty):
 
 
 #test, odkomentuj
-#penalty_input = input("Ile w dupe? ")
+penalty_input = input("Ile w dupe? ")
 
-#hangman_penalty(penalty_input)
+hangman_penalty(penalty_input)
