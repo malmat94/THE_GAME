@@ -106,35 +106,37 @@ def hangman_penalty(penalty):
  |     /|\ 
  |     / \ 
  |
-/|\ """
+/|\ 
 
-    if penalty == '1':
+PRZEGRAŁEŚ!!!"""
+
+    if penalty == 1:
         print(try_1)
-    elif penalty == '2':
+    elif penalty == 2:
         print(try_2)
-    elif penalty == '3':
+    elif penalty == 3:
         print(try_3)
-    elif penalty == '4':
+    elif penalty == 4:
         print(try_4)
-    elif penalty == '5':
+    elif penalty == 5:
         print(try_5)
-    elif penalty == '6':
+    elif penalty == 6:
         print(try_6)
-    elif penalty == '7':
+    elif penalty == 7:
         print(try_7)
-    elif penalty == '8':
+    elif penalty == 8:
         print(try_8)
-    elif penalty == '9':
+    elif penalty == 9:
         print(try_9)
-    elif penalty == '10':
+    elif penalty == 10:
         print(try_10)
-    elif penalty == '11':
+    elif penalty == 11:
         print(try_11)
-    elif penalty == '12':
+    elif penalty == 12:
         print(try_12)
 
 
 #test, odkomentuj
-penalty_input = input("Ile w dupe? ")
+#penalty_input = input("Ile w dupe? ")
 
-hangman_penalty(penalty_input)
+#hangman_penalty(penalty_input)
