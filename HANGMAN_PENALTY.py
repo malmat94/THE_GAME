@@ -108,7 +108,7 @@ def hangman_penalty(penalty):
  |
 /|\ 
 
-PRZEGRAŁEŚ!!!"""
+PRZEGRAŁEŚ/ PRZEGRAŁAŚ!!!"""
 
     if penalty == 1:
         print(try_1)
@@ -134,6 +134,7 @@ PRZEGRAŁEŚ!!!"""
         print(try_11)
     elif penalty == 12:
         print(try_12)
+
 
 
 #test, odkomentuj
