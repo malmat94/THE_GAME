@@ -11,10 +11,22 @@ while game_on == "T":
 #losowanie kompa
     P_2_index = random.randrange(0, len(bronie))
     P_2 = bronie[P_2_index]
-    if P1 == "K":
+    if P_1 == "K":
         P1_bron = "KAMIEŃ"
-    elif P1 == "P":
+    elif P_1 == "P":
         P1_bron = "PAPIER"
+    elif P_1 == "N":
+        P1_bron = "NOŻYCE"
+
+    if P_2 == "K":
+        P2_bron = "KAMIEŃ"
+    elif P_2 == "P":
+        P2_bron = "PAPIER"
+    elif P_2 == "N":
+        P2_bron = "NOŻYCE"
+
+    print(f"""Gracz nr 1 wybrał: {P1_bron}
+Gracz nr 2 wybrał: {P2_bron}""")
 
 
     if P_1 == "K" and P_2 == "K":

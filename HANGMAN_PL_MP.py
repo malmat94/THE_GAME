@@ -3,9 +3,9 @@ import HANGMAN_PENALTY
 import getpass  #<- do sprawdzenia
 
 #word = "warszawa"  <- do testowania
-word = (input("Jakie słowo będzie zgadywane? ")) #jakies tam slowo do testu
+#word = (input("Jakie słowo będzie zgadywane? ")) #jakies tam slowo do testu
 
-#word = getpass.getpass(prompt = "Jakie słowo będzie zgadywane?") #<- działa, ale nie w pycharmie
+word = getpass.getpass(prompt = "Jakie słowo będzie zgadywane?") #<- działa, ale nie w pycharmie
 word_length = len(word)
 
 word_hidden = []
@@ -19,9 +19,11 @@ penalty = 0 #zadanie zmiennej penalty
 input_history = [] #otwarcie listy z inputami (co by sie nie powtarzać)
 
 while penalty < 12:
+    print("")
     taken_symbol = 1
     while taken_symbol == 1: #pętla do sprawdzenia, czy wprowadzana litera, lub słowo się powtórzyło
         symbol = input("Wybierz literę, lub odgadnij całe słowo: ")  # wybieranie literki przez gracza
+        print("")
         if input_history.count(symbol) > 0:
             taken_symbol = 1
             print("Litera , lub słowo zostało już wybrane!")
@@ -30,8 +32,6 @@ while penalty < 12:
             taken_symbol = 0
             input_history.append(symbol)
 
-    symbol = str(input_history[-1])
-
     symbol_index = [_.start() for _ in re.finditer(symbol, word)]  # znalezienie WSZYSTKICH znaków w stringu
     #print(symbol_index)
     #print(len(symbol_index))
@@ -39,18 +39,23 @@ while penalty < 12:
     if symbol == word: #sprawdzenie czy odgadnięto słowo
         print(f"Tak, to {word}, WYGRAŁEŚ/ WYGRAŁAŚ!!!")
         break
-    elif symbol != word: #wypadek jak literka/ słowo nie zostają odgadnięte
-        if len(symbol_index) == 0:
+    elif symbol != word: #przypadek gdy słowno nie zostało do razu odgadnięte
+        if len(symbol) == 1: #sprawdzenie czy wybrana literka się zgadza
+
+            if len(symbol_index) == 0: #jeżeli się nie zgadza
+                penalty += 1
+                HANGMAN_PENALTY.hangman_penalty(penalty)
+                print(' '.join(word_hidden))
+
+            else: #jeżeli się zgadza
+                inserted_value = ""
+                for i in range(0, len(symbol_index)):  # wstawianie wybranej literki do listy
+                    inserted_value = symbol_index[i]
+                    word_hidden[inserted_value] = word[inserted_value]
+                print(' '.join(word_hidden))
+        else: #jeżeli wpisano ciągn znaków nie zgadzający się z odgadywanym słowem
             penalty += 1
             HANGMAN_PENALTY.hangman_penalty(penalty)
-        #elif len(symbol_index) > 0 and symbol != word:
-            #penalty += 1
-            #HANGMAN_PENALTY.hangman_penalty(penalty)
-        else: #literka odgadnięta
-            inserted_value = ""
-            for i in range(0, len(symbol_index)):  # wstawianie wybranej literki do listy
-                inserted_value = symbol_index[i]
-                word_hidden[inserted_value] = word[inserted_value]
             print(' '.join(word_hidden))
 
 
