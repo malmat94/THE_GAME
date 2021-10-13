@@ -1,4 +1,4 @@
-import random
+import getpass
 
 bronie = ["K", "P", "N"]
 
@@ -7,10 +7,9 @@ P_1_points = 0
 P_2_points = 0
 while game_on == "t":
 
-    P_1 = input("Graczu, wybierz broń(K/P/N): ").upper()
-#losowanie kompa
-    P_2_index = random.randrange(0, len(bronie))
-    P_2 = bronie[P_2_index]
+    P_1 = getpass.getpass(prompt = "Graczu 1, wybierz broń(K/P/N): ").upper()
+    P_2 = getpass.getpass(prompt = "Graczu 2, wybierz broń(K/P/N): ").upper()
+
     if P_1 == "K":
         P1_bron = "KAMIEŃ"
     elif P_1 == "P":

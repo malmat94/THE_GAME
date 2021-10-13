@@ -45,7 +45,7 @@ while penalty < 12:
     print("")
     taken_symbol = 1
     while taken_symbol == 1: #pętla do sprawdzenia, czy wprowadzana litera, lub słowo się powtórzyło
-        symbol = input("Wybierz literę, lub odgadnij całe słowo: ")  # wybieranie literki przez gracza
+        symbol = input("Wybierz literę, lub odgadnij całe słowo: ").casefold()  # wybieranie literki przez gracza
         print("")
         if input_history.count(symbol) > 0:
             taken_symbol = 1

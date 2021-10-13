@@ -5,7 +5,7 @@ import getpass  #<- do sprawdzenia
 #word = "warszawa"  <- do testowania
 #word = (input("Jakie słowo będzie zgadywane? ")) #jakies tam slowo do testu
 
-word = getpass.getpass(prompt = "Jakie słowo będzie zgadywane?") #<- działa, ale nie w pycharmie
+word = getpass.getpass(prompt = "Jakie słowo będzie zgadywane?").casefold() #<- działa, ale nie w pycharmie
 word_length = len(word)
 
 word_hidden = []
@@ -22,7 +22,7 @@ while penalty < 12:
     print("")
     taken_symbol = 1
     while taken_symbol == 1: #pętla do sprawdzenia, czy wprowadzana litera, lub słowo się powtórzyło
-        symbol = input("Wybierz literę, lub odgadnij całe słowo: ")  # wybieranie literki przez gracza
+        symbol = input("Wybierz literę, lub odgadnij całe słowo: ").casefold()  # wybieranie literki przez gracza
         print("")
         if input_history.count(symbol) > 0:
             taken_symbol = 1
