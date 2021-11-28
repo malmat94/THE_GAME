@@ -30,6 +30,12 @@ P_2_symbol = symbol_choice[1]
 
 game_table()
 print(" ")
+print("Pozycję wybiera się na zasadzie wpsółrzędnych:")
+print(" - Najpierw podajemy współrzędną literkową (A, B, lub C)")
+print(" - Następnie współrzędną cyfrową (1, 2, lub 3)")
+print("Przykład: pozycja A1 oznacza lewy górny róg planszy")
+print(" ")
+
 
 #poniżej moduł gry rozbity na 2 języki
 #if language == "PL": #moduł gry dla PL
@@ -68,8 +74,13 @@ while game_over != True:
             P1_choice = P1_raw_choice
             free_spot = True
         else:
+            print("")
             print("Zajęte!!/ Zły symbol!!")
+            print("")
             free_spot = False
+
+        print("")
+
 
 #poniżej moduł przypisujący lokalizację
     if P1_choice == "A1":
@@ -90,7 +101,9 @@ while game_over != True:
         C2 = P_1_symbol
     elif P1_choice == "C3":
         C3 = P_1_symbol
+    print("")
     game_table()
+    print("")
 
 #poniżej moduł sprawdzający warunki wygranej
     if A1 == P_1_symbol and A2 == P_1_symbol and A3 == P_1_symbol:
@@ -159,7 +172,9 @@ while game_over != True:
             P2_choice = P2_raw_choice
             free_spot = True
         else:
+            print("")
             print("Zajęte!!/ Zły symbol!!")
+            print("")
             free_spot = False
 
     if P2_choice == "A1":
